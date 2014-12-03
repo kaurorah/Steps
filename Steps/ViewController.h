@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import CoreMotion;
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *stepsTodayLabel;
 
 
 @end
