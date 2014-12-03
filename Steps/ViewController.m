@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //TODO: investigate nscalendar for better date tracking
     NSDate *today = [NSDate date];
     NSDate *past24Hours = [today dateByAddingTimeInterval:-(24. * 3600.)];
 

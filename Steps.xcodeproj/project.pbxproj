@@ -14,6 +14,10 @@
 		1074A9D21A2ECBAF00C40880 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9D11A2ECBAF00C40880 /* Images.xcassets */; };
 		1074A9D51A2ECBAF00C40880 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */; };
 		1074A9E11A2ECBAF00C40880 /* StepsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9E01A2ECBAF00C40880 /* StepsTests.m */; };
+		1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */; };
+		1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9F11A2ED2E000C40880 /* ParticleScene.m */; };
+		1074A9F51A2ED81900C40880 /* StepParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F31A2ED81900C40880 /* StepParticle.sks */; };
+		1074A9F61A2ED81900C40880 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F41A2ED81900C40880 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,12 @@
 		1074A9DA1A2ECBAF00C40880 /* StepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1074A9DF1A2ECBAF00C40880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1074A9E01A2ECBAF00C40880 /* StepsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepsTests.m; sourceTree = "<group>"; };
+		1074A9ED1A2ED29B00C40880 /* StepsParticleVisualizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepsParticleVisualizerViewController.h; sourceTree = "<group>"; };
+		1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsParticleVisualizerViewController.m; sourceTree = "<group>"; };
+		1074A9F01A2ED2E000C40880 /* ParticleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleScene.h; sourceTree = "<group>"; };
+		1074A9F11A2ED2E000C40880 /* ParticleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleScene.m; sourceTree = "<group>"; };
+		1074A9F31A2ED81900C40880 /* StepParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StepParticle.sks; sourceTree = "<group>"; };
+		1074A9F41A2ED81900C40880 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,12 @@
 				1074A9D11A2ECBAF00C40880 /* Images.xcassets */,
 				1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */,
 				1074A9C41A2ECBAF00C40880 /* Supporting Files */,
+				1074A9ED1A2ED29B00C40880 /* StepsParticleVisualizerViewController.h */,
+				1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */,
+				1074A9F01A2ED2E000C40880 /* ParticleScene.h */,
+				1074A9F11A2ED2E000C40880 /* ParticleScene.m */,
+				1074A9F31A2ED81900C40880 /* StepParticle.sks */,
+				1074A9F41A2ED81900C40880 /* spark.png */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -199,9 +215,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1074A9F61A2ED81900C40880 /* spark.png in Resources */,
 				1074A9D01A2ECBAF00C40880 /* Main.storyboard in Resources */,
 				1074A9D51A2ECBAF00C40880 /* LaunchScreen.xib in Resources */,
 				1074A9D21A2ECBAF00C40880 /* Images.xcassets in Resources */,
+				1074A9F51A2ED81900C40880 /* StepParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +239,8 @@
 			files = (
 				1074A9CD1A2ECBAF00C40880 /* ViewController.m in Sources */,
 				1074A9CA1A2ECBAF00C40880 /* AppDelegate.m in Sources */,
+				1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */,
+				1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */,
 				1074A9C71A2ECBAF00C40880 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

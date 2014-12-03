@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Visual-->
         <scene sceneID="7DL-WD-b8n">
             <objects>
-                <viewController id="QEo-Yf-V43" sceneMemberID="viewController">
+                <viewController id="QEo-Yf-V43" customClass="StepsParticleVisualizerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1yb-SL-9Ao"/>
                         <viewControllerLayoutGuide type="bottom" id="XN9-9i-IcW"/>
@@ -15,15 +15,24 @@
                     <view key="view" contentMode="scaleToFill" id="zTE-Eh-U1s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgd-l6-T5M" customClass="SKView">
+                                <rect key="frame" x="-21" y="-33" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.97647064924240112" green="0.91764712333679199" blue="0.92156869173049927" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="cuK-uP-5tS"/>
+                    <tabBarItem key="tabBarItem" title="Visual" id="cuK-uP-5tS"/>
+                    <connections>
+                        <outlet property="skView" destination="kgd-l6-T5M" id="Z28-6k-Foi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9Y-mj-PEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="688"/>
+            <point key="canvasLocation" x="277" y="689"/>
         </scene>
-        <!--Item 1-->
+        <!--Numerical-->
         <scene sceneID="48d-aG-BRo">
             <objects>
                 <viewController id="Gcb-8G-eum" customClass="ViewController" sceneMemberID="viewController">
@@ -61,7 +70,7 @@
                             <constraint firstAttribute="centerX" secondItem="p3W-ag-RBu" secondAttribute="centerX" id="xlO-dX-th1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="HVf-yD-IPh"/>
+                    <tabBarItem key="tabBarItem" title="Numerical" id="HVf-yD-IPh"/>
                     <connections>
                         <outlet property="activityLabel" destination="gu3-QA-mR4" id="5DX-RA-EuN"/>
                         <outlet property="stepsTodayLabel" destination="0lp-D3-gzY" id="GL8-Qh-1PP"/>
