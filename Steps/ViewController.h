@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDSunriseSet.h"
+#import <CoreLocation/CoreLocation.h>
 @import CoreMotion;
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;

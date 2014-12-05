@@ -10,63 +10,59 @@
 
 @interface ViewController ()
 
-@property (assign) NSInteger stepsToday;
+@property (assign) NSNumber* stepsToday;
 @property (nonatomic, strong) CMPedometer *pedometer;
 @property (nonatomic,strong) CMMotionActivityManager *motionDetector;
+@property (nonatomic,strong)NSDate * now;
 
 @end
 
 @implementation ViewController
 
+CLLocationManager *locationManager;
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+   
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    //TODO: investigate nscalendar for better date tracking
-    NSDate *today = [NSDate date];
-    NSDate *past24Hours = [today dateByAddingTimeInterval:-(24. * 3600.)];
-
-    if ([CMPedometer isStepCountingAvailable]) {
-        self.pedometer = [[CMPedometer alloc] init];
-    }
-    else {
-        NSLog(@"pedometer not available!");
-    }
-    //live updates of pedometer data
-    [self.pedometer startPedometerUpdatesFromDate:past24Hours
-                                      withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                              
-                                              NSLog(@"data:%@, error:%@", pedometerData, error);
-                                                  self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
-                                          });
-                              }];
-//    [self.pedometer queryPedometerDataFromDate:past24Hours toDate:today withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-//        self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
-//        
-//    }];
+    self.now = [NSDate date];
     self.motionDetector = [[CMMotionActivityManager alloc] init];
-    [self.motionDetector startActivityUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMMotionActivity *activity) {
-        if ([activity walking]) {
-            self.activityLabel.text=@"walking";
-        }
-        if ([activity running]) {
-            self.activityLabel.text=@"running";
-        }
-        if ([activity cycling]) {
-            self.activityLabel.text=@"cycling";
-        }
-        if ([activity automotive]) {
-            self.activityLabel.text=@"automotive";
-        }
-        if ([activity stationary]) {
-            self.activityLabel.text=@"stationary";
-        }
-        if ([activity unknown]) {
-            self.activityLabel.text=@"unknown";
-        }
-    }];
+    [super viewDidLoad];
+    [self getActivitySinceMidnight];
+    [self beginLivePedometerUpdates];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
 
-
+    float latitude = locationManager.location.coordinate.latitude;
+    float longitude = locationManager.location.coordinate.longitude;
+    
+    NSTimeZone *localTime = [NSTimeZone systemTimeZone];
+    EDSunriseSet *sun = [EDSunriseSet sunrisesetWithTimezone:localTime latitude:latitude longitude:longitude];
+    [sun calculate:[NSDate date]];
+    
+    NSDate *currentDate = [NSDate date];
+    NSDate *sunset = sun.sunset;
+    NSDate *sunrise = sun.sunrise;
+    
+    [sun calculateSunriseSunset:[NSDate date]];
+    [sun calculate:[NSDate date]];
+    NSLog(@"%@",sunrise);
+    
+//    //live updates of pedometer data since midnight
+//    [self.pedometer startPedometerUpdatesFromDate:midnight
+//                                      withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+//                                          dispatch_async(dispatch_get_main_queue(), ^{
+//                                              
+//                                              NSLog(@"data:%@, error:%@", pedometerData, error);
+//                                                  self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
+//                                          });
+//                              }];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,6 +84,58 @@
     
 }
 
+- (void) getActivitySinceMidnight {
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear
+                                    | NSCalendarUnitMonth
+                                    | NSCalendarUnitDay
+                                               fromDate:self.now];
+    
+    NSDate *beginOfDay = [calendar dateFromComponents:components];
+   
+    if ([CMPedometer isStepCountingAvailable]) {
+        self.pedometer = [[CMPedometer alloc] init];
+    }
+    else {
+        NSLog(@"pedometer not available!");
+    }
+
+    [self.pedometer queryPedometerDataFromDate:beginOfDay toDate:self.now withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+                self.stepsToday = pedometerData.numberOfSteps;
+                self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
+
+    }];
+    [self getCurrentActivity];
+   
+}
+
+- (void) beginLivePedometerUpdates{
+    NSTimer * timer = [ NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(getActivitySinceMidnight) userInfo:nil repeats:YES];
+}
+
+- (void) getCurrentActivity {
+    [self.motionDetector startActivityUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMMotionActivity *activity) {
+        if ([activity walking]) {
+            self.activityLabel.text=@"walking";
+        }
+        if ([activity running]) {
+            self.activityLabel.text=@"running";
+        }
+        if ([activity cycling]) {
+            self.activityLabel.text=@"cycling";
+        }
+        if ([activity automotive]) {
+            self.activityLabel.text=@"automotive";
+        }
+        if ([activity stationary]) {
+            self.activityLabel.text=@"stationary";
+        }
+        if ([activity unknown]) {
+            self.activityLabel.text=@"unknown";
+        }
+    }];
+}
 
 
 
