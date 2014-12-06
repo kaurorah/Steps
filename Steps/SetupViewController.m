@@ -53,6 +53,15 @@
 {
     selectedGoal=(NSInteger)[[stepPickerData objectAtIndex:row] integerValue];//(NSInteger)stepPickerData[row];
     
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showNumericalScene"]){
+        UITabBarController *tabBarController = (UITabBarController *)segue.destinationViewController;
+        ViewController *controller = (ViewController *)[tabBarController.viewControllers objectAtIndex:0];
+        controller.selectedStepGoal = selectedGoal;
+    }
 }
 
 /*

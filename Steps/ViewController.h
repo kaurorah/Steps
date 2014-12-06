@@ -13,7 +13,9 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stepsTodayLabel;
+@property(nonatomic) NSInteger selectedStepGoal;
 
+@property (weak, nonatomic) IBOutlet UILabel *stepsAwayFromGoal;
 
 @end
 

@@ -26,11 +26,12 @@ CLLocationManager *locationManager;
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+
     self.now = [NSDate date];
     self.motionDetector = [[CMMotionActivityManager alloc] init];
-    [super viewDidLoad];
     [self getActivitySinceMidnight];
-    [self beginLivePedometerUpdates];
+   // [self beginLivePedometerUpdates];
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -52,17 +53,6 @@ CLLocationManager *locationManager;
     [sun calculate:[NSDate date]];
     NSLog(@"%@",sunrise);
     
-//    //live updates of pedometer data since midnight
-//    [self.pedometer startPedometerUpdatesFromDate:midnight
-//                                      withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-//                                          dispatch_async(dispatch_get_main_queue(), ^{
-//                                              
-//                                              NSLog(@"data:%@, error:%@", pedometerData, error);
-//                                                  self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
-//                                          });
-//                              }];
-    
-   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,14 +90,31 @@ CLLocationManager *locationManager;
     else {
         NSLog(@"pedometer not available!");
     }
+//
+//    [self.pedometer queryPedometerDataFromDate:beginOfDay toDate:self.now withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+//                self.stepsToday = pedometerData.numberOfSteps;
+//                self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
+//
+//    }];
+    [self.pedometer startPedometerUpdatesFromDate:beginOfDay
+                                      withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                              
+                                              NSLog(@"data:%@, error:%@", pedometerData, error);
+                                              self.stepsTodayLabel.text = [self stringWithObject:pedometerData.numberOfSteps];
+                                            NSInteger steps = [pedometerData.numberOfSteps integerValue];
+                                              
+                                              NSInteger difference = self.selectedStepGoal - steps;
+                                              
+                                              self.stepsAwayFromGoal.text = [NSString stringWithFormat: @"%ld", (long)difference];
+                                    
 
-    [self.pedometer queryPedometerDataFromDate:beginOfDay toDate:self.now withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-                self.stepsToday = pedometerData.numberOfSteps;
-                self.stepsTodayLabel.text=[self stringWithObject:pedometerData.numberOfSteps];
+                                          });
+                                      }];
 
-    }];
     [self getCurrentActivity];
    
+    
 }
 
 - (void) beginLivePedometerUpdates{
