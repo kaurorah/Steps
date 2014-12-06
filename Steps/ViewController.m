@@ -13,7 +13,7 @@
 @property (assign) NSNumber* stepsToday;
 @property (nonatomic, strong) CMPedometer *pedometer;
 @property (nonatomic,strong) CMMotionActivityManager *motionDetector;
-@property (nonatomic,strong)NSDate * now;
+@property (nonatomic,strong) NSDate * now;
 
 @end
 
@@ -136,7 +136,5 @@ CLLocationManager *locationManager;
         }
     }];
 }
-
-
 
 @end

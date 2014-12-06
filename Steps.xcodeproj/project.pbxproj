@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10370C3A1A3187F20009C0B0 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10370C391A3187F20009C0B0 /* SetupViewController.m */; };
 		1074A9C71A2ECBAF00C40880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9C61A2ECBAF00C40880 /* main.m */; };
 		1074A9CA1A2ECBAF00C40880 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9C91A2ECBAF00C40880 /* AppDelegate.m */; };
 		1074A9CD1A2ECBAF00C40880 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9CC1A2ECBAF00C40880 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10370C381A3187F20009C0B0 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		10370C391A3187F20009C0B0 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		1074A9C11A2ECBAF00C40880 /* Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1074A9C51A2ECBAF00C40880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1074A9C61A2ECBAF00C40880 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				1074A9F11A2ED2E000C40880 /* ParticleScene.m */,
 				1074A9F31A2ED81900C40880 /* StepParticle.sks */,
 				1074A9F41A2ED81900C40880 /* spark.png */,
+				10370C381A3187F20009C0B0 /* SetupViewController.h */,
+				10370C391A3187F20009C0B0 /* SetupViewController.m */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			files = (
 				1074A9CD1A2ECBAF00C40880 /* ViewController.m in Sources */,
 				1074AA5E1A30385200C40880 /* EDSunriseSet.m in Sources */,
+				10370C3A1A3187F20009C0B0 /* SetupViewController.m in Sources */,
 				1074A9CA1A2ECBAF00C40880 /* AppDelegate.m in Sources */,
 				1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */,
 				1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */,
