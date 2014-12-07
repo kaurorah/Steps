@@ -29,7 +29,7 @@
     for (int i = 0; i < stepsTaken; i++) {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
         
-        [sprite setScale:0.25];
+        [sprite setScale:0.05];
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
         sprite.color = [UIColor whiteColor];
