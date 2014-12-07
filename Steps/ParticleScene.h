@@ -10,5 +10,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface ParticleScene : SKScene
-
+- (void)showStepsTaken: (NSInteger) stepsTaken;
 @end

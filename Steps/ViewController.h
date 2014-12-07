@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EDSunriseSet.h"
 #import <CoreLocation/CoreLocation.h>
+
 @import CoreMotion;
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController  <UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *activityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stepsTodayLabel;
 @property(nonatomic) NSInteger selectedStepGoal;
-
 @property (weak, nonatomic) IBOutlet UILabel *stepsAwayFromGoal;
+
+@property (nonatomic) NSInteger stepsTaken;
+@property (nonatomic) NSInteger stepsNotTaken;
+
 
 @end
 

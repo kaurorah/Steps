@@ -19,7 +19,6 @@
 		1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9F11A2ED2E000C40880 /* ParticleScene.m */; };
 		1074A9F51A2ED81900C40880 /* StepParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F31A2ED81900C40880 /* StepParticle.sks */; };
 		1074A9F61A2ED81900C40880 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F41A2ED81900C40880 /* spark.png */; };
-		1074AA5E1A30385200C40880 /* EDSunriseSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074AA5D1A30385200C40880 /* EDSunriseSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +53,6 @@
 		1074A9F11A2ED2E000C40880 /* ParticleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleScene.m; sourceTree = "<group>"; };
 		1074A9F31A2ED81900C40880 /* StepParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StepParticle.sks; sourceTree = "<group>"; };
 		1074A9F41A2ED81900C40880 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		1074AA5C1A30385200C40880 /* EDSunriseSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDSunriseSet.h; path = "../../EDSunriseSet-master/EDSunriseSet.h"; sourceTree = "<group>"; };
-		1074AA5D1A30385200C40880 /* EDSunriseSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSunriseSet.m; path = "../../EDSunriseSet-master/EDSunriseSet.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +99,6 @@
 				1074A9CB1A2ECBAF00C40880 /* ViewController.h */,
 				1074A9CC1A2ECBAF00C40880 /* ViewController.m */,
 				1074A9CE1A2ECBAF00C40880 /* Main.storyboard */,
-				1074AA5C1A30385200C40880 /* EDSunriseSet.h */,
-				1074AA5D1A30385200C40880 /* EDSunriseSet.m */,
 				1074A9D11A2ECBAF00C40880 /* Images.xcassets */,
 				1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */,
 				1074A9C41A2ECBAF00C40880 /* Supporting Files */,
@@ -248,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1074A9CD1A2ECBAF00C40880 /* ViewController.m in Sources */,
-				1074AA5E1A30385200C40880 /* EDSunriseSet.m in Sources */,
 				10370C3A1A3187F20009C0B0 /* SetupViewController.m in Sources */,
 				1074A9CA1A2ECBAF00C40880 /* AppDelegate.m in Sources */,
 				1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */,

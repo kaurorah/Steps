@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ParticleScene.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface StepsParticleVisualizerViewController : UIViewController
-
+@property (nonatomic) NSInteger stepsTakenTransferred;
+@property (nonatomic) NSInteger stepsNotTakenTransferred;
 @end

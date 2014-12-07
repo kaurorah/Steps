@@ -7,33 +7,39 @@
 //
 
 #import "ParticleScene.h"
+@interface ParticleScene()
+    @property (nonatomic, strong) NSArray *sprites;
+@end
 
 @implementation ParticleScene
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithWhite:255 alpha:100];
     }
     return self;
+
 }
 
-- (SKEmitterNode *) newExplosion: (float)posX : (float) posy
+- (void)showStepsTaken: (NSInteger) stepsTaken
 {
-    SKEmitterNode *emitter =  [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"StepParticle" ofType:@"sks"]];
-    emitter.position = CGPointMake(posX,posy);
-    emitter.zPosition=2.0;
-    return emitter;
+    self.backgroundColor = [SKColor blackColor];
+    
+    SKTexture *ledTexture = [SKTexture textureWithImageNamed:@"pusheen"];
+    
+    for (int i = 0; i < stepsTaken; i++) {
+        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
+        
+        [sprite setScale:0.25];
+        sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
+        sprite.colorBlendFactor = 1.;
+        sprite.color = [UIColor whiteColor];
+        [self addChild:sprite];
+    }
+    
+    self.sprites = [NSArray arrayWithArray:self.children];
 }
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        //add effect at touch location
-        [self addChild:[self newExplosion:location.x : location.y]];
-    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

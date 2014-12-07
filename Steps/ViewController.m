@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "StepsParticleVisualizerViewController.h"
 
 @interface ViewController ()
 
@@ -14,6 +15,10 @@
 @property (nonatomic, strong) CMPedometer *pedometer;
 @property (nonatomic,strong) CMMotionActivityManager *motionDetector;
 @property (nonatomic,strong) NSDate * now;
+@property (weak, nonatomic) IBOutlet UISwitch *dataToggle;
+@property (weak, nonatomic) IBOutlet UILabel *stepsLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *stepsLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *toggleInstructionLabel;
 
 @end
 
@@ -27,31 +32,50 @@ CLLocationManager *locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBarController.delegate = self;
 
     self.now = [NSDate date];
     self.motionDetector = [[CMMotionActivityManager alloc] init];
     [self getActivitySinceMidnight];
    // [self beginLivePedometerUpdates];
     
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    [locationManager startUpdatingLocation];
+    
+}
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    if ([viewController isKindOfClass:[StepsParticleVisualizerViewController class]]){
+        StepsParticleVisualizerViewController *svc = (StepsParticleVisualizerViewController *) viewController;
+        svc.stepsTakenTransferred = self.stepsTaken;
+        svc.stepsNotTakenTransferred = self.stepsNotTaken;
+    }
+    return TRUE;
+}
 
-    float latitude = locationManager.location.coordinate.latitude;
-    float longitude = locationManager.location.coordinate.longitude;
-    
-    NSTimeZone *localTime = [NSTimeZone systemTimeZone];
-    EDSunriseSet *sun = [EDSunriseSet sunrisesetWithTimezone:localTime latitude:latitude longitude:longitude];
-    [sun calculate:[NSDate date]];
-    
-    NSDate *currentDate = [NSDate date];
-    NSDate *sunset = sun.sunset;
-    NSDate *sunrise = sun.sunrise;
-    
-    [sun calculateSunriseSunset:[NSDate date]];
-    [sun calculate:[NSDate date]];
-    NSLog(@"%@",sunrise);
+//calorie estimates from this article: http://www.livestrong.com/article/320124-how-many-calories-does-the-average-person-use-per-step/
+//1 calorie for every 20 steps on average
+- (IBAction)switchPressed:(id)sender {
+    NSLog(@"switched");
+    if (self.dataToggle.isOn) {
+        self.stepsLabel1.text=@"You have taken";
+        NSInteger steps = [self.stepsToday integerValue];
+        self.stepsTodayLabel.text=[NSString stringWithFormat: @"%ld", (long)steps];
+        self.stepsLabel2.text= @"steps today.";
+        self.toggleInstructionLabel.text=@"Toggle for calories.";
+
+    }
+    else{
+        NSLog(@"%@", self.stepsToday);
+        NSInteger steps = [self.stepsToday integerValue];
+        NSInteger caloriesBurned=steps/20;
+        NSLog(@"%ld", (long)caloriesBurned);
+
+        self.stepsLabel1.text=@"You have burned";
+        self.stepsTodayLabel.text=[NSString stringWithFormat: @"%ld", (long)caloriesBurned];
+        self.stepsLabel2.text= @"calories today.";
+        self.toggleInstructionLabel.text=@"Toggle for steps.";
+        
+
+
+    }
     
 }
 
@@ -103,12 +127,14 @@ CLLocationManager *locationManager;
                                               NSLog(@"data:%@, error:%@", pedometerData, error);
                                               self.stepsTodayLabel.text = [self stringWithObject:pedometerData.numberOfSteps];
                                             NSInteger steps = [pedometerData.numberOfSteps integerValue];
-                                              
+                                              self.stepsToday=pedometerData.numberOfSteps;
+                                              NSLog(@"%@", self.stepsToday);
                                               NSInteger difference = self.selectedStepGoal - steps;
                                               
                                               self.stepsAwayFromGoal.text = [NSString stringWithFormat: @"%ld", (long)difference];
                                     
-
+                                              self.stepsTaken = steps;
+                                              self.stepsNotTaken = difference;
                                           });
                                       }];
 
@@ -142,6 +168,8 @@ CLLocationManager *locationManager;
             self.activityLabel.text=@"unknown";
         }
     }];
+
+
 }
 
 @end

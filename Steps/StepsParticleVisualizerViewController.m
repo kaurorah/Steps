@@ -7,9 +7,9 @@
 //
 
 #import "StepsParticleVisualizerViewController.h"
+#import "ParticleScene.h"
 
 @interface StepsParticleVisualizerViewController ()
-@property (weak, nonatomic) IBOutlet UIView *skView;
 
 @end
 
@@ -17,17 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SKView * skView = _skView;
+    NSLog(@"%ld", self.stepsNotTakenTransferred);
+
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [ParticleScene sceneWithSize:skView.bounds.size];
+    ParticleScene * scene = [ParticleScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    [scene showStepsTaken:(NSInteger) self.stepsTakenTransferred];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
