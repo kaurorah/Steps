@@ -122,6 +122,7 @@
                                     <switch opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXJ-Gz-eSh">
                                         <rect key="frame" x="136" y="109" width="51" height="31"/>
                                         <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="thumbTintColor" red="1" green="0.99099180360000005" blue="0.80555217670000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="switchPressed:" destination="Gcb-8G-eum" eventType="valueChanged" id="d4h-Yg-AXx"/>
                                         </connections>
@@ -232,7 +233,7 @@
                             <constraint firstItem="4mB-WK-pwa" firstAttribute="leading" secondItem="1tV-3Q-dEf" secondAttribute="leading" id="gfv-KR-Bme"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Numerical" id="HVf-yD-IPh"/>
+                    <tabBarItem key="tabBarItem" title="Overview" id="HVf-yD-IPh"/>
                     <navigationItem key="navigationItem" title="Title" id="EhD-1Q-GQh"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>

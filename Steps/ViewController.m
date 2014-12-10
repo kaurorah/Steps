@@ -46,6 +46,7 @@ CLLocationManager *locationManager;
         StepsParticleVisualizerViewController *svc = (StepsParticleVisualizerViewController *) viewController;
         svc.stepsTakenTransferred = self.stepsTaken;
         svc.stepsNotTakenTransferred = self.stepsNotTaken;
+        svc.activityTransferred = self.activity;
     }
     return TRUE;
 }
@@ -151,21 +152,27 @@ CLLocationManager *locationManager;
     [self.motionDetector startActivityUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMMotionActivity *activity) {
         if ([activity walking]) {
             self.activityLabel.text=@"walking";
+            self.activity = @"walking";
         }
         if ([activity running]) {
             self.activityLabel.text=@"running";
+            self.activity = @"running";
         }
         if ([activity cycling]) {
             self.activityLabel.text=@"cycling";
+            self.activity = @"cycling";
         }
         if ([activity automotive]) {
             self.activityLabel.text=@"automotive";
+            self.activity = @"automotive";
         }
         if ([activity stationary]) {
             self.activityLabel.text=@"stationary";
+            self.activity = @"stationary";
         }
         if ([activity unknown]) {
             self.activityLabel.text=@"unknown";
+            self.activity = @"unknown";
         }
     }];
 

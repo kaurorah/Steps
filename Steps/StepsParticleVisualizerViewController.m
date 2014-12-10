@@ -32,6 +32,10 @@
     [skView presentScene:scene];
     
     [scene showStepsTaken:(NSInteger) self.stepsTakenTransferred];
+    scene.stepsTaken= self.stepsTakenTransferred;
+    scene.stepsNotTaken = self.stepsNotTakenTransferred;
+    scene.currentActivity = self.activityTransferred;
+    [scene showStepsNotTaken:(NSInteger) self.stepsNotTakenTransferred];
 }
 
 

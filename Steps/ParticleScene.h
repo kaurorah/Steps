@@ -11,4 +11,10 @@
 
 @interface ParticleScene : SKScene
 - (void)showStepsTaken: (NSInteger) stepsTaken;
+- (void)showStepsNotTaken: (NSInteger) stepsNotTaken;
+
+@property (nonatomic) NSString*  currentActivity;
+@property (nonatomic) NSInteger stepsNotTaken;
+@property (nonatomic) NSInteger stepsTaken;
+
 @end

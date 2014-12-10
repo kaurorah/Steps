@@ -16,8 +16,10 @@
 @property(nonatomic) NSInteger selectedStepGoal;
 @property (weak, nonatomic) IBOutlet UILabel *stepsAwayFromGoal;
 
+//Passed on to other controllers
 @property (nonatomic) NSInteger stepsTaken;
 @property (nonatomic) NSInteger stepsNotTaken;
+@property (nonatomic) NSString *activity;
 
 
 @end

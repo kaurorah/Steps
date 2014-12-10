@@ -12,4 +12,5 @@
 @interface StepsParticleVisualizerViewController : UIViewController
 @property (nonatomic) NSInteger stepsTakenTransferred;
 @property (nonatomic) NSInteger stepsNotTakenTransferred;
+@property (nonatomic) NSString* activityTransferred;
 @end
