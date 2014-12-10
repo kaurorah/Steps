@@ -10,7 +10,8 @@
 #import "ParticleScene.h"
 
 @interface StepsParticleVisualizerViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+@property (nonatomic) ParticleScene * scene;
 @end
 
 @implementation StepsParticleVisualizerViewController
@@ -25,20 +26,26 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    ParticleScene * scene = [ParticleScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene = [ParticleScene sceneWithSize:skView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.scene];
     
-    [scene showStepsTaken:(NSInteger) self.stepsTakenTransferred];
-    scene.stepsTaken= self.stepsTakenTransferred;
-    scene.stepsNotTaken = self.stepsNotTakenTransferred;
-    scene.currentActivity = self.activityTransferred;
-    [scene showStepsNotTaken:(NSInteger) self.stepsNotTakenTransferred];
+    self.scene.stepsTaken= self.stepsTakenTransferred;
+    self.scene.stepsNotTaken = self.stepsNotTakenTransferred;
+    self.scene.currentActivity = self.activityTransferred;
+    self.activityLabel.text = self.activityTransferred;
+    [self.scene showStepsTaken:(NSInteger) self.stepsTakenTransferred];
+    [self.scene showStepsNotTaken:(NSInteger) self.stepsNotTakenTransferred];
 }
 
-
+- (void) viewDidAppear:(BOOL)animated{
+    self.activityLabel.text = self.activityTransferred;
+    if(self.scene !=nil){
+        [self.scene updateDataWith:self.activityTransferred andSteps:self.stepsTakenTransferred andStepsNotTaken:self.stepsNotTakenTransferred];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

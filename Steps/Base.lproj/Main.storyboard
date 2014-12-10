@@ -45,11 +45,22 @@
                     <view key="view" contentMode="scaleToFill" id="zTE-Eh-U1s" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxb-Bo-Psb">
+                                <rect key="frame" x="16" y="419" width="288" height="75"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="57"/>
+                                <color key="textColor" red="1" green="0.39026521381578949" blue="0.22910670230263158" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                     </view>
                     <tabBarItem key="tabBarItem" title="Visualize" selectedImage="circular_step" id="cuK-uP-5tS"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="Kxb-Bo-Psb" id="mRD-yc-ijd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9Y-mj-PEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
