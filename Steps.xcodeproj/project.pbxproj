@@ -17,11 +17,10 @@
 		1074A9E11A2ECBAF00C40880 /* StepsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9E01A2ECBAF00C40880 /* StepsTests.m */; };
 		1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */; };
 		1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9F11A2ED2E000C40880 /* ParticleScene.m */; };
-		1074A9F51A2ED81900C40880 /* StepParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F31A2ED81900C40880 /* StepParticle.sks */; };
-		1074A9F61A2ED81900C40880 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1074A9F41A2ED81900C40880 /* spark.png */; };
 		6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5DD1A3686F4005EC576 /* stepDot.png */; };
 		6F5BA5E01A36DC6A005EC576 /* kicks_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5DF1A36DC6A005EC576 /* kicks_small.png */; };
 		6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E11A36DE6A005EC576 /* gradient.png */; };
+		6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E51A37E955005EC576 /* gradient2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +53,10 @@
 		1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepsParticleVisualizerViewController.m; sourceTree = "<group>"; };
 		1074A9F01A2ED2E000C40880 /* ParticleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleScene.h; sourceTree = "<group>"; };
 		1074A9F11A2ED2E000C40880 /* ParticleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleScene.m; sourceTree = "<group>"; };
-		1074A9F31A2ED81900C40880 /* StepParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StepParticle.sks; sourceTree = "<group>"; };
-		1074A9F41A2ED81900C40880 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		6F5BA5DD1A3686F4005EC576 /* stepDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stepDot.png; path = ../../stepDot.png; sourceTree = "<group>"; };
 		6F5BA5DF1A36DC6A005EC576 /* kicks_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kicks_small.png; path = ../../kicks_small.png; sourceTree = "<group>"; };
 		6F5BA5E11A36DE6A005EC576 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../gradient.png; sourceTree = "<group>"; };
+		6F5BA5E51A37E955005EC576 /* gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient2.png; path = ../../gradient2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +109,11 @@
 				1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */,
 				1074A9C41A2ECBAF00C40880 /* Supporting Files */,
 				1074A9ED1A2ED29B00C40880 /* StepsParticleVisualizerViewController.h */,
+				6F5BA5E51A37E955005EC576 /* gradient2.png */,
 				6F5BA5E11A36DE6A005EC576 /* gradient.png */,
 				1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */,
 				1074A9F01A2ED2E000C40880 /* ParticleScene.h */,
 				1074A9F11A2ED2E000C40880 /* ParticleScene.m */,
-				1074A9F31A2ED81900C40880 /* StepParticle.sks */,
-				1074A9F41A2ED81900C40880 /* spark.png */,
 				10370C381A3187F20009C0B0 /* SetupViewController.h */,
 				10370C391A3187F20009C0B0 /* SetupViewController.m */,
 			);
@@ -229,14 +226,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1074A9F61A2ED81900C40880 /* spark.png in Resources */,
 				1074A9D01A2ECBAF00C40880 /* Main.storyboard in Resources */,
 				1074A9D51A2ECBAF00C40880 /* LaunchScreen.xib in Resources */,
 				6F5BA5E01A36DC6A005EC576 /* kicks_small.png in Resources */,
 				1074A9D21A2ECBAF00C40880 /* Images.xcassets in Resources */,
 				6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */,
-				1074A9F51A2ED81900C40880 /* StepParticle.sks in Resources */,
 				6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */,
+				6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
