@@ -18,9 +18,13 @@
 		1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9EE1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m */; };
 		1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1074A9F11A2ED2E000C40880 /* ParticleScene.m */; };
 		6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5DD1A3686F4005EC576 /* stepDot.png */; };
-		6F5BA5E01A36DC6A005EC576 /* kicks_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5DF1A36DC6A005EC576 /* kicks_small.png */; };
 		6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E11A36DE6A005EC576 /* gradient.png */; };
 		6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E51A37E955005EC576 /* gradient2.png */; };
+		6F5BA5E81A37F4AA005EC576 /* circular_step.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E71A37F4AA005EC576 /* circular_step.png */; };
+		6F5BA6071A37F82B005EC576 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5BA6061A37F82B005EC576 /* MapViewController.m */; };
+		6F5BA6091A37FAC5005EC576 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */; };
+		6F5BA60B1A37FAD5005EC576 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA60A1A37FAD5005EC576 /* MapKit.framework */; };
+		6F5BA60D1A38112E005EC576 /* emptyDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA60C1A38112E005EC576 /* emptyDot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +58,14 @@
 		1074A9F01A2ED2E000C40880 /* ParticleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleScene.h; sourceTree = "<group>"; };
 		1074A9F11A2ED2E000C40880 /* ParticleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleScene.m; sourceTree = "<group>"; };
 		6F5BA5DD1A3686F4005EC576 /* stepDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stepDot.png; path = ../../stepDot.png; sourceTree = "<group>"; };
-		6F5BA5DF1A36DC6A005EC576 /* kicks_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kicks_small.png; path = ../../kicks_small.png; sourceTree = "<group>"; };
 		6F5BA5E11A36DE6A005EC576 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../gradient.png; sourceTree = "<group>"; };
 		6F5BA5E51A37E955005EC576 /* gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient2.png; path = ../../gradient2.png; sourceTree = "<group>"; };
+		6F5BA5E71A37F4AA005EC576 /* circular_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circular_step.png; path = ../../circular_step.png; sourceTree = "<group>"; };
+		6F5BA6051A37F82B005EC576 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		6F5BA6061A37F82B005EC576 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6F5BA60A1A37FAD5005EC576 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6F5BA60C1A38112E005EC576 /* emptyDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emptyDot.png; path = ../../emptyDot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5BA60B1A37FAD5005EC576 /* MapKit.framework in Frameworks */,
+				6F5BA6091A37FAC5005EC576 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +91,8 @@
 		1074A9B81A2ECBAF00C40880 = {
 			isa = PBXGroup;
 			children = (
+				6F5BA60A1A37FAD5005EC576 /* MapKit.framework */,
+				6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */,
 				1074A9C31A2ECBAF00C40880 /* Steps */,
 				1074A9DD1A2ECBAF00C40880 /* StepsTests */,
 				1074A9C21A2ECBAF00C40880 /* Products */,
@@ -104,7 +117,8 @@
 				1074A9CC1A2ECBAF00C40880 /* ViewController.m */,
 				1074A9CE1A2ECBAF00C40880 /* Main.storyboard */,
 				1074A9D11A2ECBAF00C40880 /* Images.xcassets */,
-				6F5BA5DF1A36DC6A005EC576 /* kicks_small.png */,
+				6F5BA60C1A38112E005EC576 /* emptyDot.png */,
+				6F5BA5E71A37F4AA005EC576 /* circular_step.png */,
 				6F5BA5DD1A3686F4005EC576 /* stepDot.png */,
 				1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */,
 				1074A9C41A2ECBAF00C40880 /* Supporting Files */,
@@ -116,6 +130,8 @@
 				1074A9F11A2ED2E000C40880 /* ParticleScene.m */,
 				10370C381A3187F20009C0B0 /* SetupViewController.h */,
 				10370C391A3187F20009C0B0 /* SetupViewController.m */,
+				6F5BA6051A37F82B005EC576 /* MapViewController.h */,
+				6F5BA6061A37F82B005EC576 /* MapViewController.m */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -228,9 +244,10 @@
 			files = (
 				1074A9D01A2ECBAF00C40880 /* Main.storyboard in Resources */,
 				1074A9D51A2ECBAF00C40880 /* LaunchScreen.xib in Resources */,
-				6F5BA5E01A36DC6A005EC576 /* kicks_small.png in Resources */,
 				1074A9D21A2ECBAF00C40880 /* Images.xcassets in Resources */,
+				6F5BA5E81A37F4AA005EC576 /* circular_step.png in Resources */,
 				6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */,
+				6F5BA60D1A38112E005EC576 /* emptyDot.png in Resources */,
 				6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */,
 				6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */,
 			);
@@ -256,6 +273,7 @@
 				1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */,
 				1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */,
 				1074A9C71A2ECBAF00C40880 /* main.m in Sources */,
+				6F5BA6071A37F82B005EC576 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

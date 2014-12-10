@@ -26,8 +26,8 @@
 {
     self.stepsTaken = stepsTaken;
     self.backgroundColor = [SKColor whiteColor];
-    SKAction *scaleUp=[SKAction scaleTo:1 duration: 4];
-    SKAction *scaleDown=[SKAction scaleTo: -1 duration: 4];
+    SKAction *scaleUp=[SKAction scaleTo:0.2 duration: 3];
+    SKAction *scaleDown=[SKAction scaleTo:0.05  duration: 3];
     SKAction *pulse = [SKAction sequence:@[scaleUp, scaleDown]];
     SKAction *repeatPulse = [SKAction repeatActionForever:pulse];
 
@@ -41,7 +41,7 @@
         
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
-        sprite.color = [UIColor greenColor];
+        sprite.color = [UIColor colorWithRed:30.0/255.0 green:192.0/255.0 blue:164.0/255.0 alpha:1 ];
         [sprite runAction:repeatPulse];
         [self addChild:sprite];
     }
@@ -53,13 +53,13 @@
 {
     self.stepsNotTaken = stepsNotTaken;
     self.backgroundColor = [SKColor whiteColor];
-    SKAction *scaleUp=[SKAction scaleTo:0.5 duration: 4];
-    SKAction *scaleDown=[SKAction scaleTo: -0.5 duration: 4];
+    SKAction *scaleUp=[SKAction scaleTo:0.2 duration: 3];
+    SKAction *scaleDown=[SKAction scaleTo:0.05 duration: 3];
     SKAction *pulse = [SKAction sequence:@[scaleUp, scaleDown]];
     SKAction *repeatPulse = [SKAction repeatActionForever:pulse];
     
     
-    SKTexture *ledTexture = [SKTexture textureWithImageNamed:@"stepDot"];
+    SKTexture *ledTexture = [SKTexture textureWithImageNamed:@"emptyDot"];
     
     for (int i = 0; i < stepsNotTaken; i++) {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
@@ -68,8 +68,8 @@
         
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
-        sprite.color = [UIColor redColor];
-        [sprite runAction:repeatPulse];
+        sprite.color = [UIColor colorWithRed:30.0/255.0 green:22.0/255.0 blue:164.0/255.0 alpha:1 ];
+       [sprite runAction:repeatPulse];
         [self addChild:sprite];
     }
     

@@ -8,7 +8,7 @@
         <!--Map-->
         <scene sceneID="5hp-X1-0vM">
             <objects>
-                <viewController id="PeK-LR-IP0" sceneMemberID="viewController">
+                <viewController id="PeK-LR-IP0" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DxE-vc-Q1O"/>
                         <viewControllerLayoutGuide type="bottom" id="zrU-dM-hBn"/>
@@ -16,17 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="lBf-pa-yJk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-sy-hUg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="537"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="H85-Gq-hFe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="Lc1-sy-hUg" id="yt7-MU-DnR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDb-6P-DlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="603" y="393"/>
         </scene>
-        <!--Visual-->
+        <!--Visualize-->
         <scene sceneID="7DL-WD-b8n">
             <objects>
                 <viewController id="QEo-Yf-V43" customClass="StepsParticleVisualizerViewController" sceneMemberID="viewController">
@@ -38,7 +46,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Visual" id="cuK-uP-5tS"/>
+                    <tabBarItem key="tabBarItem" title="Visualize" selectedImage="circular_step" id="cuK-uP-5tS"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -78,7 +86,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.89954377691493992" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.81133901149999998" green="1" blue="0.98085248489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gu3-QA-mR4" firstAttribute="leading" secondItem="8ce-vf-O27" secondAttribute="leading" id="2US-fb-OT0"/>
                                     <constraint firstItem="8ce-vf-O27" firstAttribute="centerX" secondItem="d6u-Dk-aB4" secondAttribute="centerX" id="5u1-A3-Doy"/>
@@ -134,11 +142,11 @@
                                             <constraint firstAttribute="width" constant="108" id="U4V-tY-wBr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66315230825940885" green="1" blue="0.92821789242317609" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.37484580592105265" green="0.059084187307936076" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="qx0-Jv-9PL" firstAttribute="top" secondItem="p3W-ag-RBu" secondAttribute="bottom" constant="18" id="4fR-QR-DN8"/>
                                     <constraint firstItem="OJR-7B-GWO" firstAttribute="leading" secondItem="0lp-D3-gzY" secondAttribute="leading" id="86O-jj-VIj"/>
@@ -185,7 +193,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84371205979005504" green="1" blue="0.56502403546008606" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Gl4-cV-e7z" secondAttribute="bottom" constant="81" id="6CE-VM-vnx"/>
                                     <constraint firstItem="Gl4-cV-e7z" firstAttribute="top" secondItem="PFD-6W-RZ5" secondAttribute="bottom" constant="1" id="EDm-UH-Jtk"/>
@@ -268,23 +276,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="325" height="568"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to Steps!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="237-J1-ZyQ">
-                                <rect key="frame" x="16" y="76" width="288" height="46"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Steps is an activity monitering app which lets you set daily goals. Your progress is visually shown and easy to guage." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz1-9u-UpJ">
-                                <rect key="frame" x="16" y="130" width="288" height="249"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Steps is an activity monitering app which lets you set daily goals. Your progress is visually shown and easy to guage." lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz1-9u-UpJ">
+                                <rect key="frame" x="16" y="118" width="288" height="339"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="4N1-OC-kg5"/>
+                                    <constraint firstAttribute="width" constant="288" id="8ba-LH-TGY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-ah-I9u">
-                                <rect key="frame" x="94" y="387" width="136" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                <rect key="frame" x="16" y="465" width="288" height="53"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
                                 <state key="normal" title="Get started.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,18 +296,23 @@
                                     <segue destination="CD5-lb-edT" kind="show" id="2MK-ky-5li"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to Steps." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="237-J1-ZyQ">
+                                <rect key="frame" x="10" y="28" width="294" height="115"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="lz1-9u-UpJ" secondAttribute="centerX" id="RXF-O4-4ff"/>
-                            <constraint firstAttribute="centerX" secondItem="prP-ah-I9u" secondAttribute="centerX" id="mXL-eH-Yse"/>
-                            <constraint firstAttribute="centerX" secondItem="237-J1-ZyQ" secondAttribute="centerX" id="yCh-dh-4pj"/>
+                            <constraint firstAttribute="centerX" secondItem="lz1-9u-UpJ" secondAttribute="centerX" id="1uu-Ux-Iv8"/>
+                            <constraint firstAttribute="centerX" secondItem="prP-ah-I9u" secondAttribute="centerX" id="Tr1-fx-iQ4"/>
+                            <constraint firstAttribute="centerX" secondItem="237-J1-ZyQ" secondAttribute="centerX" id="n7t-sy-oBx"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Cf-cC-O4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2024" y="346"/>
+            <point key="canvasLocation" x="-1718" y="362"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="Sgt-pL-CB3">
@@ -318,19 +326,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You can change this at any point." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wn-ew-1VH">
-                                <rect key="frame" x="43" y="124" width="235" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You can change this any time." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wn-ew-1VH">
+                                <rect key="frame" x="54" y="124" width="213" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-Ax-HfQ">
-                                <rect key="frame" x="276" y="173" width="324" height="162"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZK-4n-hJl">
-                                <rect key="frame" x="256" y="430" width="95" height="29"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="Next">
+                                <rect key="frame" x="43" y="458" width="235" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="AQx-UI-52i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -346,8 +355,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-Ax-HfQ">
+                                <rect key="frame" x="-2" y="203" width="324" height="162"/>
+                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.63428348458535444" green="0.66024949520405452" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="pbO-zW-CV8" secondAttribute="centerX" id="3VS-Lv-vje"/>
                             <constraint firstAttribute="centerX" secondItem="wZK-4n-hJl" secondAttribute="centerX" id="MLr-u6-89W"/>
@@ -386,9 +398,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circular_step" width="600" height="700"/>
         <image name="gradient2.png" width="900" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2MK-ky-5li"/>
+        <segue reference="F3Y-jK-ADd"/>
     </inferredMetricsTieBreakers>
 </document>
