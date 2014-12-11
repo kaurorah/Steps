@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Initialize Data
-    stepPickerData = @[@"5000", @"5500", @"6000",@"6500",@"7000",@"7500",@"8000",@"9500",@"10000",@"10500"];
+    stepPickerData = @[@"1500", @"2000", @"2500",@"3000", @"3500", @"4000", @"4500",
+                       @"5000", @"5500", @"6000",@"6500",@"7000",@"7500",@"8000",@"9500",@"10000",@"10500"];
     
     self.stepGoalPicker.dataSource = self;
     self.stepGoalPicker.delegate = self;

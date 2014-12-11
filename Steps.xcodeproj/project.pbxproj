@@ -21,7 +21,6 @@
 		6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E11A36DE6A005EC576 /* gradient.png */; };
 		6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E51A37E955005EC576 /* gradient2.png */; };
 		6F5BA5E81A37F4AA005EC576 /* circular_step.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E71A37F4AA005EC576 /* circular_step.png */; };
-		6F5BA6071A37F82B005EC576 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5BA6061A37F82B005EC576 /* MapViewController.m */; };
 		6F5BA6091A37FAC5005EC576 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */; };
 		6F5BA60B1A37FAD5005EC576 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA60A1A37FAD5005EC576 /* MapKit.framework */; };
 		6F5BA60D1A38112E005EC576 /* emptyDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA60C1A38112E005EC576 /* emptyDot.png */; };
@@ -61,8 +60,6 @@
 		6F5BA5E11A36DE6A005EC576 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../gradient.png; sourceTree = "<group>"; };
 		6F5BA5E51A37E955005EC576 /* gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient2.png; path = ../../gradient2.png; sourceTree = "<group>"; };
 		6F5BA5E71A37F4AA005EC576 /* circular_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circular_step.png; path = ../../circular_step.png; sourceTree = "<group>"; };
-		6F5BA6051A37F82B005EC576 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		6F5BA6061A37F82B005EC576 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6F5BA60A1A37FAD5005EC576 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6F5BA60C1A38112E005EC576 /* emptyDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emptyDot.png; path = ../../emptyDot.png; sourceTree = "<group>"; };
@@ -130,8 +127,6 @@
 				1074A9F11A2ED2E000C40880 /* ParticleScene.m */,
 				10370C381A3187F20009C0B0 /* SetupViewController.h */,
 				10370C391A3187F20009C0B0 /* SetupViewController.m */,
-				6F5BA6051A37F82B005EC576 /* MapViewController.h */,
-				6F5BA6061A37F82B005EC576 /* MapViewController.m */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -273,7 +268,6 @@
 				1074A9EF1A2ED29B00C40880 /* StepsParticleVisualizerViewController.m in Sources */,
 				1074A9F21A2ED2E000C40880 /* ParticleScene.m in Sources */,
 				1074A9C71A2ECBAF00C40880 /* main.m in Sources */,
-				6F5BA6071A37F82B005EC576 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

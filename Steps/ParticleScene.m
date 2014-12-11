@@ -32,15 +32,15 @@
 
 - (SKAction*) setWalkingAction{
     SKAction *scaleUp=[SKAction scaleTo:0.2 duration: 1];
-    SKAction *scaleDown=[SKAction scaleTo:0.05  duration: 2];
+    SKAction *scaleDown=[SKAction scaleTo:0.05  duration: 1];
     SKAction *pulse = [SKAction sequence:@[scaleUp, scaleDown]];
     SKAction *repeatPulse = [SKAction repeatActionForever:pulse];
     return repeatPulse;
 }
 
 - (SKAction*) setRunningAction{
-    SKAction *scaleUp=[SKAction scaleTo:0.2 duration: 1];
-    SKAction *scaleDown=[SKAction scaleTo:0.05  duration: 2];
+    SKAction *scaleUp=[SKAction scaleTo:0.2 duration: 0.5];
+    SKAction *scaleDown=[SKAction scaleTo:0.05  duration: 0.5];
     SKAction *pulse = [SKAction sequence:@[scaleUp, scaleDown]];
     SKAction *repeatPulse = [SKAction repeatActionForever:pulse];
     return repeatPulse;
@@ -52,7 +52,7 @@
     self.stepsNotTaken = stepNotTaken;
     self.stepsTaken = stepsTaken;
     if (self.stepsTaken > pastNumberOfSteps){
-        self.updateParticles;
+        [self updateParticles];
     }
 
     if([self.currentActivity isEqualToString:@"stationary"]){
@@ -86,8 +86,7 @@
         
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
-        sprite.color = [UIColor colorWithRed:30.0/255.0 green:192.0/255.0 blue:164.0/255.0 alpha:1 ];
-
+   sprite.color = [UIColor colorWithRed:71.0/255.0 green:213.0/255.0 blue:201.0/255.0 alpha:1 ];
         
         if ([self.currentActivity  isEqual:@"stationary"]) {
             [sprite runAction:[self setStationaryAction]];
@@ -123,10 +122,7 @@
         
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
-        sprite.color = [UIColor colorWithRed:30.0/255.0 green:192.0/255.0 blue:164.0/255.0 alpha:1 ];
-        SKAction* stationary = [self setStationaryAction];
-        SKAction* walking = [self setWalkingAction];
-        SKAction* running = [self setRunningAction];
+        sprite.color = [UIColor colorWithRed:43.0/255.0 green:204.0/255.0 blue:216.0/255.0 alpha:1 ];
         
         if ([self.currentActivity  isEqual:@"stationary"]) {
             [sprite runAction:[self setStationaryAction]];
@@ -158,7 +154,6 @@
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
         sprite.color = [UIColor colorWithRed:30.0/255.0 green:22.0/255.0 blue:164.0/255.0 alpha:1 ];
-        SKAction* stationary = [self setStationaryAction];
         
         if ([self.currentActivity  isEqual:@"stationary"]) {
             [sprite runAction:[self setStationaryAction]];

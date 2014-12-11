@@ -15,6 +15,17 @@
 @end
 
 @implementation StepsParticleVisualizerViewController
+- (IBAction)pageInfo:(id)sender {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Particle Information" message:@"\nThese particles show you how many steps you have taken and how many you need to complete your goal.\n \n Each particle represents 10 steps. The solid particles are steps you have taken today. The hollow particles are steps you need to complete your daily goal!\n \nThe speed of the particles reflect your current activity state." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+-(BOOL) prefersStatusBarHidden{
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,18 +43,18 @@
     // Present the scene.
     [skView presentScene:self.scene];
     
-    self.scene.stepsTaken= self.stepsTakenTransferred;
-    self.scene.stepsNotTaken = self.stepsNotTakenTransferred;
+    self.scene.stepsTaken= self.stepsTakenTransferred/10;
+    self.scene.stepsNotTaken = self.stepsNotTakenTransferred/10;
     self.scene.currentActivity = self.activityTransferred;
     self.activityLabel.text = self.activityTransferred;
-    [self.scene showStepsTaken:(NSInteger) self.stepsTakenTransferred];
-    [self.scene showStepsNotTaken:(NSInteger) self.stepsNotTakenTransferred];
+    [self.scene showStepsTaken:(NSInteger) self.stepsTakenTransferred/10];
+    [self.scene showStepsNotTaken:(NSInteger) self.stepsNotTakenTransferred/10];
 }
 
 - (void) viewDidAppear:(BOOL)animated{
     self.activityLabel.text = self.activityTransferred;
     if(self.scene !=nil){
-        [self.scene updateDataWith:self.activityTransferred andSteps:self.stepsTakenTransferred andStepsNotTaken:self.stepsNotTakenTransferred];
+        [self.scene updateDataWith:self.activityTransferred andSteps:self.stepsTakenTransferred/10 andStepsNotTaken:self.stepsNotTakenTransferred/10];
     }
 }
 - (void)didReceiveMemoryWarning {

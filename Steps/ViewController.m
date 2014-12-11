@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *stepsLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *stepsLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *toggleInstructionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goalCompletedLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *goalCompletedLabel2;
 
 @end
 
@@ -27,7 +29,9 @@
 CLLocationManager *locationManager;
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-   
+//    if(self.motionDetector!=nil){
+//        [self getCurrentActivity];
+//    }
 }
 
 - (void)viewDidLoad {
@@ -41,6 +45,11 @@ CLLocationManager *locationManager;
     
     
 }
+
+-(BOOL) prefersStatusBarHidden{
+    return YES;
+}
+
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
     if ([viewController isKindOfClass:[StepsParticleVisualizerViewController class]]){
         StepsParticleVisualizerViewController *svc = (StepsParticleVisualizerViewController *) viewController;
@@ -95,7 +104,7 @@ CLLocationManager *locationManager;
     
     [super viewWillDisappear:animated];
     
-    [self.pedometer stopPedometerUpdates];
+    //[self.pedometer stopPedometerUpdates];
     
 }
 
@@ -132,7 +141,16 @@ CLLocationManager *locationManager;
                                               NSLog(@"%@", self.stepsToday);
                                               NSInteger difference = self.selectedStepGoal - steps;
                                               
-                                              self.stepsAwayFromGoal.text = [NSString stringWithFormat: @"%ld", (long)difference];
+                                              if (difference < 0) {
+                                                  self.goalCompletedLabel1.text = @"You have";
+                                                  self.stepsAwayFromGoal.text = @"completed";
+                                                  self.goalCompletedLabel2.text = @"your daily goal!";
+                                                  
+                                              }
+                                              
+                                              else {
+                                                  self.stepsAwayFromGoal.text = [NSString stringWithFormat: @"%ld", (long)difference];
+                                              }
                                     
                                               self.stepsTaken = steps;
                                               self.stepsNotTaken = difference;
