@@ -16,7 +16,7 @@
 
 @implementation StepsParticleVisualizerViewController
 - (IBAction)pageInfo:(id)sender {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Particle Information" message:@"\nThese particles show you how many steps you have taken and how many you need to complete your goal.\n \n Each particle represents 10 steps. The solid particles are steps you have taken today. The hollow particles are steps you need to complete your daily goal!\n \nThe speed of the particles reflect your current activity state." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Particle Information" message:@"\nThese particles show you how many steps you have taken and how many you need to complete your goal.\n \n Each particle represents 10 steps. The solid particles are steps you have taken today. The hollow particles are steps you need to complete your daily goal!\n \nThe speed of the particles reflect your activity while making those steps. For example, steps made while running will pulse faster than steps made while walking." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancel];
         [self presentViewController:alert animated:YES completion:nil];

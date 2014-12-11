@@ -20,7 +20,6 @@
 		6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5DD1A3686F4005EC576 /* stepDot.png */; };
 		6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E11A36DE6A005EC576 /* gradient.png */; };
 		6F5BA5E61A37E955005EC576 /* gradient2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E51A37E955005EC576 /* gradient2.png */; };
-		6F5BA5E81A37F4AA005EC576 /* circular_step.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA5E71A37F4AA005EC576 /* circular_step.png */; };
 		6F5BA6091A37FAC5005EC576 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */; };
 		6F5BA60B1A37FAD5005EC576 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5BA60A1A37FAD5005EC576 /* MapKit.framework */; };
 		6F5BA60D1A38112E005EC576 /* emptyDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F5BA60C1A38112E005EC576 /* emptyDot.png */; };
@@ -59,7 +58,6 @@
 		6F5BA5DD1A3686F4005EC576 /* stepDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stepDot.png; path = ../../stepDot.png; sourceTree = "<group>"; };
 		6F5BA5E11A36DE6A005EC576 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../../gradient.png; sourceTree = "<group>"; };
 		6F5BA5E51A37E955005EC576 /* gradient2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient2.png; path = ../../gradient2.png; sourceTree = "<group>"; };
-		6F5BA5E71A37F4AA005EC576 /* circular_step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circular_step.png; path = ../../circular_step.png; sourceTree = "<group>"; };
 		6F5BA6081A37FAC5005EC576 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6F5BA60A1A37FAD5005EC576 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6F5BA60C1A38112E005EC576 /* emptyDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emptyDot.png; path = ../../emptyDot.png; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				1074A9CE1A2ECBAF00C40880 /* Main.storyboard */,
 				1074A9D11A2ECBAF00C40880 /* Images.xcassets */,
 				6F5BA60C1A38112E005EC576 /* emptyDot.png */,
-				6F5BA5E71A37F4AA005EC576 /* circular_step.png */,
 				6F5BA5DD1A3686F4005EC576 /* stepDot.png */,
 				1074A9D31A2ECBAF00C40880 /* LaunchScreen.xib */,
 				1074A9C41A2ECBAF00C40880 /* Supporting Files */,
@@ -240,7 +237,6 @@
 				1074A9D01A2ECBAF00C40880 /* Main.storyboard in Resources */,
 				1074A9D51A2ECBAF00C40880 /* LaunchScreen.xib in Resources */,
 				1074A9D21A2ECBAF00C40880 /* Images.xcassets in Resources */,
-				6F5BA5E81A37F4AA005EC576 /* circular_step.png in Resources */,
 				6F5BA5E21A36DE6A005EC576 /* gradient.png in Resources */,
 				6F5BA60D1A38112E005EC576 /* emptyDot.png in Resources */,
 				6F5BA5DE1A3686F4005EC576 /* stepDot.png in Resources */,
