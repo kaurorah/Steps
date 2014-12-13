@@ -122,7 +122,7 @@
         
         sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
         sprite.colorBlendFactor = 1.;
-        sprite.color = [UIColor colorWithRed:43.0/255.0 green:204.0/255.0 blue:216.0/255.0 alpha:1 ];
+        sprite.color = [UIColor colorWithRed:38.0/255.0 green:211.0/255.0 blue:253.0/255.0 alpha:1 ];
         
         if ([self.currentActivity  isEqual:@"stationary"]) {
             [sprite runAction:[self setStationaryAction]];

@@ -29,9 +29,9 @@
 CLLocationManager *locationManager;
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-//    if(self.motionDetector!=nil){
-//        [self getCurrentActivity];
-//    }
+    if(self.motionDetector!=nil){
+        [self getCurrentActivity];
+    }
 }
 
 - (void)viewDidLoad {
